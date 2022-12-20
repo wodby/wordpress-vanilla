@@ -1,4 +1,4 @@
-name: Update composer.lock
+name: Update composer deps
 
 on:
   push:
@@ -15,17 +15,23 @@ env:
   GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
 
 jobs:
-  update-composer-lock:
+  update-composer-deps:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
       with:
         token: ${{ secrets.PAT }}
-    - name: Update lock file
+    - name: Install dependencies
       uses: php-actions/composer@v6
     - name: Commit changes
       run: |
         git config --global user.name "${GIT_USER_EMAIL}"
-        git config --global user.email "${GIT_USER_EMAIL}"        
-        git commit -am "Update composer.lock file"
-        git push
+        git config --global user.email "${GIT_USER_EMAIL}"   
+        
+        if [[! $(git diff --exit-code composer.lock) ]]; then
+          git commit -m "Update composer dependencies" composer.lock
+          git push
+        else
+          echo "No changes detected"
+        fi
+
