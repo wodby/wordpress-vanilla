@@ -1,4 +1,4 @@
-name: Build docker image
+name: Update composer.lock
 
 on:
   push:
@@ -19,8 +19,6 @@ jobs:
         token: ${{ secrets.PAT }}
     - name: Update lock file
       uses: php-actions/composer@v6
-      with:
-        command: composer install -n
     - name: Commit changes
       run: |
         git commit -am "Update composer.lock file"
