@@ -26,3 +26,5 @@ jobs:
       with:
         commit_message: Update lock file
         file_pattern: 'composer.lock'
+        commit_user_name: ${{ secrets.GIT_USER_NAME }}
+        commit_user_email: ${{ secrets.GIT_USER_EMAIL }}
