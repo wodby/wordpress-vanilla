@@ -20,7 +20,7 @@ jobs:
     - name: Update lock file
       uses: php-actions/composer@v6
       with:
-        command: update --lock
+        command: update
     - name: Commit changes
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
