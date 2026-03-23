@@ -11,8 +11,9 @@
   ],
   "repositories":[
     {
-      "type":"composer",
-      "url":"https://wpackagist.org"
+      "name": "wp-packages",
+      "type": "composer",
+      "url": "https://repo.wp-packages.org"
     }
   ],
   "minimum-stability": "dev",
@@ -22,15 +23,15 @@
     "allow-plugins": {
       "composer/installers": true,
       "cweagans/composer-patches": true,
-      "drupal-composer/preserve-paths": true,
-      "johnpbloch/wordpress-core-installer": true
+      "roots/wordpress-core-installer": true,
+      "drupal-composer/preserve-paths": true
     }
   },
   "require": {
-    "composer/installers": "^1.2",
-    "drupal-composer/preserve-paths": "^0.1",
-    "johnpbloch/wordpress-core-installer": "^2.0",
-    "johnpbloch/wordpress-core": "~6.0"
+    "composer/installers": "^2.2",
+    "roots/wordpress-core-installer": "^3.0",
+    "roots/wordpress-full": "^6.8",
+    "drupal-composer/preserve-paths": "^0.1"
   },
   "extra": {
     "installer-paths": {
