@@ -1,0 +1,11 @@
+version: 0.1
+
+env:
+  FOO: bar
+
+jobs:
+  wp-plugin-status:
+    env:
+      FOO: bar2
+    steps:
+    - run: wp plugin status
