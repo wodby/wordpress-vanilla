@@ -279,22 +279,23 @@
         },
         {
             "name": "roots/wordpress-full",
-            "version": "6.9.6",
+            "version": "6.9.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.9.6"
+                "reference": "6.9.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.w.org/release/wordpress-6.9.6.zip",
-                "reference": "6.9.6"
+                "url": "https://downloads.w.org/release/wordpress-6.9.7.zip",
+                "reference": "6.9.7",
+                "shasum": "10327ae9e7cf7385e76371c0a52f377045439364"
             },
             "require": {
                 "php": ">= 7.2.24"
             },
             "provide": {
-                "wordpress/core-implementation": "6.9.6"
+                "wordpress/core-implementation": "6.9.7"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -345,7 +346,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-08-06T19:24:41+00:00"
+            "time": "2026-08-12T14:47:34+00:00"
         }
     ],
     "packages-dev": [],
