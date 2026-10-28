@@ -29,9 +29,9 @@
   },
   "require": {
     "composer/installers": "^2.2",
+    "drupal-composer/preserve-paths": "^0.1",
     "roots/wordpress-core-installer": "^3.0",
-    "roots/wordpress-full": "^6.8",
-    "drupal-composer/preserve-paths": "^0.1"
+    "roots/wordpress-full": "^7.0"
   },
   "extra": {
     "installer-paths": {
