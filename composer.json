@@ -1,15 +1,9 @@
 {
-  "name": "wodby/wordpress-composer",
-  "description": "Project template for WordPress projects with composer",
+  "name": "wodby/wordpress-vanilla",
+  "description": "Composer-based WordPress project template with WordPress core in web/wp and wp-content next to it",
   "type": "project",
-  "license": "GPL-2.0+",
-  "authors": [
-    {
-      "name": "",
-      "role": ""
-    }
-  ],
-  "repositories":[
+  "license": "GPL-2.0-or-later",
+  "repositories": [
     {
       "name": "wp-packages",
       "type": "composer",
@@ -22,26 +16,27 @@
     "sort-packages": true,
     "allow-plugins": {
       "composer/installers": true,
-      "cweagans/composer-patches": true,
-      "roots/wordpress-core-installer": true,
-      "drupal-composer/preserve-paths": true
+      "roots/wordpress-core-installer": true
     }
   },
   "require": {
     "composer/installers": "^2.2",
-    "drupal-composer/preserve-paths": "^0.1",
     "roots/wordpress-core-installer": "^3.0",
-    "roots/wordpress-full": "^7.0"
+    "roots/wordpress-no-content": "^7.0",
+    "wp-theme/twentytwentyfive": "^1.0"
   },
   "extra": {
     "installer-paths": {
-      "web/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+      "web/wp-content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
-    "preserve-paths": [
-      "web/wp-config.php",
-      "web/wp-content/uploads"
-    ],
-    "wordpress-install-dir": "web"
+    "wordpress-install-dir": "web/wp"
   }
 }
